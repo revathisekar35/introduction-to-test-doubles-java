@@ -1,6 +1,6 @@
 package com.techreturners.bubbleteaordersystem.model;
 
-public interface SimpleLoggerImpl {
+public interface SimpleLogger {
 
     void addLoggingText(String loggingText);
 

@@ -30,7 +30,7 @@ public class BubbleTeaOrderServiceTest {
     }
 
     @ParameterizedTest
-	@EnumSource(value = BubbleTeaTypeEnum.class)
+	@EnumSource(value = BubbleTeaTypeEnum.class, mode = Mode.INCLUDE, names = {"OolongMilkTea","PeachIceTea"})
     public void shouldCreateBubbleTeaOrderRequestWhenCreateOrderRequestIsCalled(BubbleTeaTypeEnum bubbleTeaTypeEnum) {
 
         //Arrange
