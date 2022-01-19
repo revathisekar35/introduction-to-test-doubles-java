@@ -3,7 +3,10 @@ import com.techreturners.bubbleteaordersystem.service.BubbleTeaMessenger;
 import com.techreturners.bubbleteaordersystem.service.BubbleTeaOrderService;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.EnumSource.Mode;
+
 import testhelper.DummySimpleLogger;
 
 import static org.junit.Assert.*;
@@ -26,18 +29,19 @@ public class BubbleTeaOrderServiceTest {
         bubbleTeaOrderService = new BubbleTeaOrderService(dummySimpleLogger, mockMessenger);
     }
 
-    @Test
-    public void shouldCreateBubbleTeaOrderRequestWhenCreateOrderRequestIsCalled() {
+    @ParameterizedTest
+	@EnumSource(value = BubbleTeaTypeEnum.class)
+    public void shouldCreateBubbleTeaOrderRequestWhenCreateOrderRequestIsCalled(BubbleTeaTypeEnum bubbleTeaTypeEnum) {
 
         //Arrange
-        BubbleTea bubbleTea = new BubbleTea(BubbleTeaTypeEnum.OolongMilkTea, 4.5);
+        BubbleTea bubbleTea = new BubbleTea(bubbleTeaTypeEnum, 4.5);
         BubbleTeaRequest bubbleTeaRequest = new BubbleTeaRequest(paymentDetails, bubbleTea);
 
         BubbleTeaOrderRequest expectedResult = new BubbleTeaOrderRequest(
                 "hello kitty",
                 "sanrio puroland",
                 "0123456789",
-                BubbleTeaTypeEnum.OolongMilkTea
+                bubbleTeaTypeEnum
         );
 
         //Act
