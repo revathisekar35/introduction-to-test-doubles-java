@@ -1,15 +1,15 @@
 package com.techreturners.bubbleteaordersystem.service;
 
-import com.techreturners.bubbleteaordersystem.model.SimpleLoggerImpl;
 import com.techreturners.bubbleteaordersystem.model.BubbleTeaOrderRequest;
 import com.techreturners.bubbleteaordersystem.model.BubbleTeaRequest;
+import com.techreturners.bubbleteaordersystem.model.SimpleLogger;
 
 public class BubbleTeaOrderService {
 
-    private SimpleLoggerImpl simpleLogger;
+    private SimpleLogger simpleLogger;
     private BubbleTeaMessenger bubbleTeaMessenger;
 
-    public BubbleTeaOrderService(SimpleLoggerImpl simpleLogger, BubbleTeaMessenger bubbleTeaMessenger) {
+    public BubbleTeaOrderService(SimpleLogger simpleLogger, BubbleTeaMessenger bubbleTeaMessenger) {
         this.simpleLogger = simpleLogger;
         this.bubbleTeaMessenger = bubbleTeaMessenger;
     }

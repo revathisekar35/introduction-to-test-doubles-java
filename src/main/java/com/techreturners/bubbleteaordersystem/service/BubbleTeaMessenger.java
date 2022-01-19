@@ -1,13 +1,13 @@
 package com.techreturners.bubbleteaordersystem.service;
 
-import com.techreturners.bubbleteaordersystem.model.SimpleLoggerImpl;
 import com.techreturners.bubbleteaordersystem.model.BubbleTeaOrderRequest;
+import com.techreturners.bubbleteaordersystem.model.SimpleLogger;
 
 public class BubbleTeaMessenger {
 
-    private SimpleLoggerImpl simpleLogger;
+    private SimpleLogger simpleLogger;
 
-    public BubbleTeaMessenger(SimpleLoggerImpl simpleLogger) {
+    public BubbleTeaMessenger(SimpleLogger simpleLogger) {
         this.simpleLogger = simpleLogger;
     }
 
